@@ -1,0 +1,112 @@
+#################### ファイルu 索 #################### 
+
+# fzf-preview
+# ripgrepをインストールするべし
+[[plugins]]
+repo = 'yuki-yano/fzf-preview.vim'
+rev = 'release/rpc'
+depends=['junegunn/fzf']
+hook_add= '''
+source ~/.cache/dein/repos/github.com/yuki-yano/fzf-preview.vim_release_rpc/plugin/fzf_preview.vim
+'''
+
+[[plugins]]
+repo = 'junegunn/fzf'
+build = './install --all'
+merged = 0
+
+#################### 見た目 #################### 
+
+# インデントに線を表示する
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+# ---------- Vim Airline ---------- 
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+hook_add = '''
+source ~/.cache/dein/repos/github.com/vim-airline/vim-airline/plugin/airline.vim
+'''
+
+# vim-airlineのテーマ
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+
+#################### Git #################### 
+# Gitコマンドを使用する
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+hook_add = '''
+nnoremap <silent> gs :Git status<CR>
+nnoremap <silent> gps :Git push<CR>
+nnoremap <silent> gpl :Git pull<CR>
+nnoremap <silent> gc :Git commit<CR>
+'''
+
+# show add/delete sign to left
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+# #################### Uncategorized ###################
+
+# 対となる括弧を追加/削除する
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+# coc
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+merged = 0
+rev = 'release'
+hook_add = '''
+source ~/.cache/dein/repos/github.com/neoclide/coc.nvim_release/plugin/coc.vim
+'''
+
+#################### 画像生成 #################### 
+
+# ソースコードをいい感じの画像にしてくれる
+[[plugins]]
+repo = 'skanehira/denops-germanium.vim'
+depends = ['denops.vim']
+hook_add = '''
+nnoremap <Leader>pic :Germanium<CR>
+vnoremap <Leader>pic :Germanium<CR>
+'''
+
+[[plugins]]
+repo = 'vim-denops/denops.vim'
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+
+[[plugins]]
+repo = 'morhetz/gruvbox' 
+
+[[plugins]]
+repo = 'scrooloose/nerdtree' 
+
+[[plugins]]
+repo = 'puremourning/vimspector' 
+hook_add = '''
+let g:vimspector_enable_mappings = 'HUMAN'
+let g:vimspector_enable_mappings_for_terminal = 'HUMAN'
+let g:vimspector_install_gadgets = ['debugpy', 'vscode-cpptools', 'CodeLLDB']
+let g:vimspector_config_dir = expand('~/.config/nvim/vimspector-config')
+'''
+
+# C++ 
+[[plugins]]
+repo = 'justmao945/vim-clang'
+
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+
+[[plugins]]
+repo = 'justmao945/vim-clang'
+
+[[plugins]]
+repo = 'Shougo/neoinclude.vim'
