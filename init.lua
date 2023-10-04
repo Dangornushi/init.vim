@@ -49,9 +49,10 @@ require("lazy").setup({
 
  -- Fern.vim
  -- use 'lambdalisue/fern-renderer-nerdfont.vim' -- これでレンダリングするとアイコンのサイズが変？
-
+ 
   {'lambdalisue/fern.vim',lazy = false, priority = 1000 }, --遅延読み込みをオフにして優先度を上げないとnvim-web-deviconsが読み込めない
  'lambdalisue/glyph-palette.vim',
+  'lambdalisue/fern-git-status.vim',
   {'TheLeoP/fern-renderer-web-devicons.nvim',dependencies = {'nvim-web-devicons'}}, 
 
  --Syntax Highlight
