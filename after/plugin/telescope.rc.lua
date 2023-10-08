@@ -17,13 +17,16 @@ telescope.setup({
     -- 画像類を検索対象に含めない(検索が重くなる)
     file_ignore_patterns = {
       "^.git/",
+      "./.git/",
       "^node_modules/",
+      "./node_modules/",
       "%.jpg",
       "%.jpeg",
       "%.png",
       "%.pdf",
       "%.gif",
       "%.svg",
+      ".DS_Store",
     },
     wrap_results = true, -- 検索結果を折り返す
   },

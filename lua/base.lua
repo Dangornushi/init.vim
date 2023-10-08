@@ -83,3 +83,23 @@ keymap('i','jj','<Esc>', opts)
 
 -- 設定ファイルを開く
 keymap('n','<F1>',':edit $MYVIMRC<CR>', opts)
+
+-- Prettierを適用 
+keymap('n','ff',':Prettier<CR>', opts)
+
+local status, prettier = pcall(require, "prettier")
+if (not status) then return end
+
+prettier.setup {
+  bin = 'prettierd',
+  filetypes = {
+    "css",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "scss",
+    "less"
+  }
+}

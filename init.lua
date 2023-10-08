@@ -58,7 +58,6 @@ require("lazy").setup({
  --Syntax Highlight
   {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
   {'JoosepAlviste/nvim-ts-context-commentstring'}, -- context-comment with treesitter
-
   {'digitaltoad/vim-pug'}, -- for .jade,.pug file syntax
 
  -- Telescope
@@ -110,6 +109,9 @@ require("lazy").setup({
 
  -- terminal Integration
   { 'akinsho/toggleterm.nvim'},
+
+ -- auto format
+  { 'dense-analysis/ale' },
 
 
 })
