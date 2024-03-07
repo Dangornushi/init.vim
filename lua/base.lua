@@ -53,6 +53,8 @@ vim.opt.list = false
 -- Leader Key
 vim.g.mapleader = ' '
 
+vim.g.rustfmt_autosave = 1
+
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 

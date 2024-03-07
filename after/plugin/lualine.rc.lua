@@ -5,7 +5,7 @@ if (not status) then return end
 
 require('lualine').setup {
   options ={
-    theme = "nightfox",
+    theme = "kanagawa",
 		globalstatus = true,
   },
   sections = {

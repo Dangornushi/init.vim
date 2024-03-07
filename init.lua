@@ -27,7 +27,8 @@ require("lazy").setup({
   {'tjdevries/colorbuddy.nvim',lazy = false, priority = 1500},
 
  -- colorscheme
-  { "EdenEast/nightfox.nvim" },
+  { "rebelot/kanagawa.nvim" },
+ --  { "EdenEast/nightfox.nvim" },
  --  { "catppuccin/nvim", as = "catppuccin" }
  -- 'ishan9299/nvim-solarized-lua',
  -- {'svrana/neosolarized.nvim',lazy = false},
@@ -36,6 +37,7 @@ require("lazy").setup({
 --   "EdenEast/nightfox.nvim"
 -- {'rmehri01/onenord.nvim',lazy = false, priority = 1500},
 -- {'sainnhe/everforest',lazy = false, priority = 1500 },
+
 
  -- coc.nvim
   {'neoclide/coc.nvim', branch = 'release'},
@@ -59,6 +61,7 @@ require("lazy").setup({
   {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
   {'JoosepAlviste/nvim-ts-context-commentstring'}, -- context-comment with treesitter
   {'digitaltoad/vim-pug'}, -- for .jade,.pug file syntax
+  {'evanleck/vim-svelte'},
 
  -- Telescope
   {'nvim-telescope/telescope.nvim' },
@@ -95,6 +98,7 @@ require("lazy").setup({
 
  -- Rust Integration
  -- use 'rust-lang/rust.vim'
+  {'rust-lang/rust.vim'},
 
  -- For using Prettier
   {'prettier/vim-prettier'},
