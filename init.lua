@@ -19,7 +19,6 @@ require('base')
 require("lazy").setup({
 
  -- Common Plugin(Lua)
-
   'antoinemadec/FixCursorHold.nvim',
   'nvim-lua/plenary.nvim',
   'folke/lsp-colors.nvim',
@@ -27,7 +26,8 @@ require("lazy").setup({
   {'tjdevries/colorbuddy.nvim',lazy = false, priority = 1500},
 
  -- colorscheme
-  { "rebelot/kanagawa.nvim" },
+{ "ellisonleao/gruvbox.nvim", priority = 1000 , config = true},
+  -- { "rebelot/kanagawa.nvim",lazy = false, priority = 1500  },
  --  { "EdenEast/nightfox.nvim" },
  --  { "catppuccin/nvim", as = "catppuccin" }
  -- 'ishan9299/nvim-solarized-lua',
@@ -38,6 +38,22 @@ require("lazy").setup({
 -- {'rmehri01/onenord.nvim',lazy = false, priority = 1500},
 -- {'sainnhe/everforest',lazy = false, priority = 1500 },
 
+{'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}, 
+
+-- Telescope
+  {'nvim-telescope/telescope.nvim' },
+  {'fannheyward/telescope-coc.nvim'},
+  {
+   "nvim-telescope/telescope-frecency.nvim",
+   dependencies = {"kkharji/sqlite.lua"}
+  },
+
+
+-- Fern
+ {'lambdalisue/fern.vim',lazy = false, priority = 1000 }, --遅延読み込みをオフにして優先度を上げないとnvim-web-deviconsが読み込めない
+ 'lambdalisue/glyph-palette.vim',
+  'lambdalisue/fern-git-status.vim',
+  {'TheLeoP/fern-renderer-web-devicons.nvim',dependencies = {'nvim-web-devicons'}}, 
 
  -- coc.nvim
   {'neoclide/coc.nvim', branch = 'release'},
@@ -46,77 +62,32 @@ require("lazy").setup({
   {'nvim-lualine/lualine.nvim'},
 
  -- Buffer Control
-  'zefei/vim-wintabs',
   {'romgrk/barbar.nvim',dependencies = { 'nvim-web-devicons' }},
 
- -- Fern.vim
- -- use 'lambdalisue/fern-renderer-nerdfont.vim' -- これでレンダリングするとアイコンのサイズが変？
- 
-  {'lambdalisue/fern.vim',lazy = false, priority = 1000 }, --遅延読み込みをオフにして優先度を上げないとnvim-web-deviconsが読み込めない
- 'lambdalisue/glyph-palette.vim',
-  'lambdalisue/fern-git-status.vim',
-  {'TheLeoP/fern-renderer-web-devicons.nvim',dependencies = {'nvim-web-devicons'}}, 
+ -- Curosor underline
+--  'yamatsum/nvim-cursorline',
 
- --Syntax Highlight
-  {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
-  {'JoosepAlviste/nvim-ts-context-commentstring'}, -- context-comment with treesitter
-  {'digitaltoad/vim-pug'}, -- for .jade,.pug file syntax
-  {'evanleck/vim-svelte'},
+ -- Jump to define
+  'pechorin/any-jump.vim',
 
- -- Telescope
-  {'nvim-telescope/telescope.nvim' },
-  {'fannheyward/telescope-coc.nvim'},
-  {
-   "nvim-telescope/telescope-frecency.nvim",
-   dependencies = {"kkharji/sqlite.lua"}
-  },
+ -- Comment out
+ {'numToStr/Comment.nvim', config = function() require('Comment').setup() end},
 
- -- Coding Support
-  'windwp/nvim-autopairs',
-  'windwp/nvim-ts-autotag',
- --  'haringsrob/nvim_context_vt'
+ -- View colorcode
+ 'norcalli/nvim-colorizer.lua',
 
-  {'petertriho/nvim-scrollbar'},
- --  {
- --   "kevinhwang91/nvim-hlslens",
- -- } 有効にすると異様に重くなる…
+ -- auto tag
+ 'windwp/nvim-ts-autotag',
 
-  {'haya14busa/vim-asterisk'},
-  {'lukas-reineke/indent-blankline.nvim' },
-  {'numToStr/Comment.nvim' },
-  {'norcalli/nvim-colorizer.lua' },
-  {"kylechui/nvim-surround"},
+ -- 閉じ括弧を自動で入力
+ 'windwp/nvim-autopairs',
 
-  {'simeji/winresizer' },
+ -- インデントの縦を点線で描画
+ { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
-{ 
-  "iamcco/markdown-preview.nvim",
-  build = "cd app && npm install",
-  setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
-  ft = { "markdown" }, 
-},
-
- -- Rust Integration
- -- use 'rust-lang/rust.vim'
-  {'rust-lang/rust.vim'},
-
- -- For using Prettier
-  {'prettier/vim-prettier'},
-
- -- Git Integration
- -- use 'dinhhuy258/git.nvim'
-  {'tpope/vim-fugitive'},
-  {'lewis6991/gitsigns.nvim'},
- --  { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
- 
-  {'github/copilot.vim'},
-
- -- terminal Integration
-  { 'akinsho/toggleterm.nvim'},
-
- -- auto format
-  { 'dense-analysis/ale' },
-
-
+{"rust-lang/rust.vim"}
 })
 
+
+vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme gruvbox]])
