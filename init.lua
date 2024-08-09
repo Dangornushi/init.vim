@@ -26,8 +26,8 @@ require("lazy").setup({
   {'tjdevries/colorbuddy.nvim',lazy = false, priority = 1500},
 
  -- colorscheme
-{ "ellisonleao/gruvbox.nvim", priority = 1000 , config = true},
-  -- { "rebelot/kanagawa.nvim",lazy = false, priority = 1500  },
+  { "rebelot/kanagawa.nvim",lazy = false, priority = 1500  },
+--   {"ellisonleao/gruvbox.nvim", priority = 1000 , config = true},
  --  { "EdenEast/nightfox.nvim" },
  --  { "catppuccin/nvim", as = "catppuccin" }
  -- 'ishan9299/nvim-solarized-lua',
@@ -62,7 +62,7 @@ require("lazy").setup({
   {'nvim-lualine/lualine.nvim'},
 
  -- Buffer Control
-  {'romgrk/barbar.nvim',dependencies = { 'nvim-web-devicons' }},
+  {'romgrk/barbar.nvim',dependencies = {  'nvim-web-devicons' }},
 
  -- Curosor underline
 --  'yamatsum/nvim-cursorline',
@@ -90,4 +90,4 @@ require("lazy").setup({
 
 
 vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme gruvbox]])
+vim.cmd([[colorscheme kanagawa]])

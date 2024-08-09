@@ -1,2 +1,2 @@
-### Neovim Config 🐛
+# Neovim Config🐛
 
